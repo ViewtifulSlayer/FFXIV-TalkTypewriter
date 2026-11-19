@@ -131,7 +131,12 @@ public class ConfigWindow : Window, IDisposable
         var keyIndex = Array.FindIndex(CompleteKeyOptions, o => o.Key == configuration.CompleteKey);
         if (keyIndex < 0)
         {
-            keyIndex = 1;
+            // A saved key this build does not offer cannot be shown by the combo, and
+            // leaving it set made the combo read "None" while the plugin still watched
+            // the stale key. Clear it so the window and the config agree.
+            keyIndex = 0;
+            configuration.CompleteKey = CompleteKeyOptions[0].Key;
+            configuration.Save();
         }
 
         ImGui.SetNextItemWidth(180f);
@@ -147,6 +152,8 @@ public class ConfigWindow : Window, IDisposable
         if (buttonIndex < 0)
         {
             buttonIndex = 0;
+            configuration.CompleteButton = CompleteButtonOptions[0].Button;
+            configuration.Save();
         }
 
         ImGui.SetNextItemWidth(180f);

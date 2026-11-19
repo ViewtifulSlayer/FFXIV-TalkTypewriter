@@ -76,6 +76,9 @@ This plugin's code was written with substantial AI assistance: an AI agent
 produced drafts and the author directed the design, ran the in-game experiments
 and validated the result. The measurement notes behind the implementation are in
 `PLAN.md`.
+The plugin icon was also generated with an AI image tool. D17 requires a
+hand-made-or-disclosed icon of at least 64x64, so it is disclosed here and in the
+manifest description shown by the installer.
 
 ## License
 
