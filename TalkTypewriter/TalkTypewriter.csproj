@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Dalamud.NET.Sdk/15.0.0">
+  <PropertyGroup>
+    <Version>0.1.0.0</Version>
+    <!-- Manifest fields (see https://github.com/goatcorp/DalamudPackager/blob/827d88dc/DalamudPackager/DalamudPackager.cs#L420) -->
+    <Author>K-Dawg</Author>
+    <Name>FFXIV Talk Typewriter</Name>
+    <Punchline>Typewriter pacing for FFXIV NPC dialogue, as a Dalamud plugin.</Punchline>
+    <Description>An FFXIV Dalamud plugin that replaces the default instant NPC dialogue reveal with a configurable per-character typewriter speed. Global speed slider plus per-NPC overrides, applied to the Talk addon in quest dialogue and cutscenes.</Description>
+    <Tags>talk;dialogue;text;speed;accessibility</Tags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\Data\icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </Content>
+  </ItemGroup>
+</Project>
