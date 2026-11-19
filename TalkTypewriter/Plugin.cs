@@ -61,6 +61,11 @@ public sealed class Plugin : IDalamudPlugin
         PluginInterface.UiBuilder.Draw += WindowSystem.Draw;
         PluginInterface.UiBuilder.OpenConfigUi += ToggleConfigUi;
 
+        // The settings window is the plugin's only UI, so it doubles as the main entry
+        // point the installer offers. Without a subscriber here Dalamud flags the plugin
+        // as having no main UI callback.
+        PluginInterface.UiBuilder.OpenMainUi += ToggleConfigUi;
+
         Log.Information("TalkTypewriter loaded. Use /talktypewriter or /ttw to open settings.");
     }
 
@@ -70,6 +75,7 @@ public sealed class Plugin : IDalamudPlugin
 
         PluginInterface.UiBuilder.Draw -= WindowSystem.Draw;
         PluginInterface.UiBuilder.OpenConfigUi -= ToggleConfigUi;
+        PluginInterface.UiBuilder.OpenMainUi -= ToggleConfigUi;
 
         WindowSystem.RemoveAllWindows();
         ConfigWindow.Dispose();
