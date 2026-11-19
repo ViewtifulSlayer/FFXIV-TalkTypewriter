@@ -28,7 +28,7 @@ jobs:
       run: dotnet build TalkTypewriter/TalkTypewriter.csproj --configuration Release
 
     - name: Store artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: TalkTypewriter
         path: TalkTypewriter\bin\Release\TalkTypewriter\*
